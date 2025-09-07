@@ -8,12 +8,12 @@ html {
 }
 
 :root {
-    --bg: #0b1220;
-    --panel: #0f172a;
-    --text: #e5e7eb;
-    --muted: #94a3b8;
-    --brand: #22d3ee;
-    --brand-dark: #0ea5e9;
+    --bg: #1a0d13;
+    --panel: #23101a;
+    --text: #ffe6ee;
+    --muted: #ffb3c9;
+    --brand: #ff7d9b;
+    --brand-dark: #c94d6a;
     --radius: 14px;
     --space-1: .5rem;
     --space-2: 1rem;
@@ -121,7 +121,7 @@ a:hover {
 /* Hero/Intro */
 .intro {
     padding: calc(var(--space-6) + 10vh) 0 var(--space-6);
-    background: radial-gradient(600px 300px at 20% 0%, rgba(34, 211, 238, .15), transparent 70%)
+    background: radial-gradient(600px 300px at 20% 0%, rgba(255, 125, 155, .15), transparent 70%)
 }
 
 .intro-grid {
