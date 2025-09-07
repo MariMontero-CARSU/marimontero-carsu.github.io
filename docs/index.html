@@ -6,7 +6,44 @@
     <title>Welcome to My Website</title>
 </head>
 <body>
-    <h1>Hello, world!</h1>
-    <p>This is Mari's page. Still a WIP!</p>
+    <a class = "skip-link" href="#content">Skip to content</a>
+
+    <!-- Top navigation bar -->
+    <header class = "site-header">
+        <div class = "container">
+            <h1 class = "logo">Mari Montero</h1>
+            <nav aria-label="Site Navigation">
+                <ul class = "nav">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id = "content">
+        <section class = "intro" aria-labelledby="intro-title">
+            <div class = "container">
+                <div class = "intro-grid">
+                    <div>
+                        <h2 id = "intro-title">Hi, I'm Mari Montero 👋</h2>
+                        <p class = "lead">I build simple, human-friendly, web experiences.</p>
+                        <a class = "btn" href="#projects"> See my work</a>
+                    </div>
+                    <figure class = "profile">
+                        <img src="https://via.placeholder.com/260" alt="Portrait of Mari Montero">
+                        <figcaption>Based in Butuan City, Philippines</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+    </main>
+  
+    <!-- Bottom copyright site footer -->
+    <footer class = "site-footer">
+        © <span id = "year">2025</span> Mari Montero
+    </footer>
 </body>
 </html>
