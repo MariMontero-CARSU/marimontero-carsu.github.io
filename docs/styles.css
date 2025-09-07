@@ -77,3 +77,165 @@ a:hover {
     top: var(--space-2);
     z-index: 999;
 }
+
+/* Header & Nav */
+.site-header {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(8px);
+    background: rgba(11, 18, 32, .7);
+    border-bottom: 1px solid #1f2937;
+}
+
+.site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .8rem 1rem;
+}
+
+.logo {
+    font-size: 1.1rem;
+    margin: 0;
+    letter-spacing: .5px;
+}
+
+.nav {
+    list-style: none;
+    display: flex;
+    gap: var(--space-3);
+    margin: 0;
+    padding: 0;
+}
+
+.nav a {
+    padding: .4rem .6rem;
+    border-radius: 8px;
+}
+
+.nav a:focus, .nav a:hover {
+    background: #0b1220;
+    outline: 2px solid transparent;
+}
+
+/* Hero/Intro */
+.intro {
+    padding: calc(var(--space-6) + 10vh) 0 var(--space-6);
+    background: radial-gradient(600px 300px at 20% 0%, rgba(34, 211, 238, .15), transparent 70%)
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: var(--space-4);
+    align-items: center;
+}
+
+.lead {
+    color: var(--muted);
+    max-width: 55ch;
+}
+
+.profile figcaption {
+    color: var(--muted);
+    font-size: .9rem;
+    margin-top: .5;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: .7rem 1rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--brand), var(--brand-dark));
+    color: #001018;
+    font-weight: 600;
+}
+
+.btn:hover {
+    filter: brightness(1.1);
+    text-decoration: none;
+}
+
+.btn-outline {
+    border: 1px solid var(--brand);
+    background: transparent;
+    color: var(--text);
+}
+
+.btn-outline:hover {
+    background: rgba(34, 211, 238, .08);
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+}
+
+.card {
+    background: var(--panel);
+    border: 1px solid #1f2937;
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    padding: var(--space-2);
+    display: grid;
+    gap: .4rem;
+}
+
+.card h3 {
+    margin: .2rem 0;
+}
+
+.card p {
+    color: var(--muted);
+    margin: 0;
+}
+
+/*  Chips */
+.chips {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+}
+
+.chips li {
+    padding: .45rem .7rem;
+    background: #0b1220;
+    border: 1px solid #1f2937;
+    border-radius: 999px;
+}
+
+/* Footer */
+.site-footer {
+    text-align: center;
+    color: var(--muted);
+    padding: var(--space-4) var(--space-2);
+    border-top: 1px solid #1f2937;
+}
+
+/* Reponsive tweaks */
+@media (max-width: 900px) {
+    .intro-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
