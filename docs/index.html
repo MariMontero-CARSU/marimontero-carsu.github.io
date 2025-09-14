@@ -39,8 +39,18 @@
                 <div class = "intro-grid">
                     <div>
                         <h2 id = "intro-title">Hi, I'm Mari! 👋</h2>
-                        <p class = "lead">Just another college student trying her best. Storyteller, D&D Enthusiast, Unfiction Enjoyer.</p>
-                        <a class = "btn" href="#projects"> See my work</a>
+                        <p class="lead-edit-wrapper">
+                            <span class="lead" id="lead-text">
+                                Just another college student trying her best. Storyteller, D&D Enthusiast, Unfiction Enjoyer.
+                            </span>
+                            <button class="edit-lead-btn" aria-label="Edit lead text" tabindex="-1">
+                                <!-- Pencil SVG icon -->
+                                <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                    <path d="M14.7 3.29a1 1 0 0 1 1.42 0l.59.59a1 1 0 0 1 0 1.42l-9.3 9.3-2.12.7.7-2.12 9.3-9.3z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                                </svg>
+                            </button>
+                        </p>
+                        <a class = "btn" id = "proj-btn" href="#projects"> See my work</a>
                     </div>
                     <figure class = "profile">
                         <img src="images/Yuna2.png" alt="Mari Montero's online avatar: a green alien wearing a flower crown and holding up a peace sign against a pink background.">
@@ -169,5 +179,20 @@
     <footer class = "site-footer">
         © <span id = "year">2025</span> Mari Montero - Built with HTML & CSS
     </footer>
+
+    <!-- Lead Text Edit Modal -->
+    <div id="lead-modal" class="modal" aria-modal="true" role="dialog" aria-labelledby="lead-modal-title" hidden>
+        <div class="modal-content">
+            <h3 id="lead-modal-title">Edit Lead Text</h3>
+            <form id="lead-modal-form">
+                <textarea id="lead-modal-input" rows="3" maxlength="120"></textarea>
+                <div class="modal-actions">
+                    <button type="submit" class="btn">Save</button>
+                    <button type="button" class="btn btn-outline" id="lead-modal-cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- End of Lead Text Edit Modal -->
 </body>
 </html>
