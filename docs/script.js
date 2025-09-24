@@ -57,4 +57,48 @@ document.addEventListener('DOMContentLoaded', function() {
             leadBtn.focus();
         }
     });
+    // Profile picture upload logic
+    const profilePic = document.getElementById('profile-pic');
+    const uploadBtn = document.querySelector('.upload-pic-btn');
+    const fileInput = document.getElementById('profile-pic-input');
+    const defaultProfileSrc = 'images/Yuna2.png';
+
+    // Always reset to default on page load
+    profilePic.src = defaultProfileSrc;
+
+    // Open file picker when upload button clicked
+    uploadBtn.addEventListener('click', function() {
+        fileInput.value = '';
+        fileInput.click();
+    });
+
+    // Handle file selection and upload
+    fileInput.addEventListener('change', function() {
+        const file = fileInput.files[0];
+        if (!file) return;
+        const formData = new FormData();
+        formData.append('profilePic', file);
+        fetch('/upload-profile-pic', {
+            method: 'POST',
+            body: formData
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.url) {
+                profilePic.src = data.url + '?t=' + Date.now(); // bust cache
+            } else {
+                alert('Upload failed.');
+            }
+        })
+        .catch(() => alert('Upload failed.'));
+    });
+
+    // Optional: Keyboard accessibility for upload button
+    uploadBtn.tabIndex = 0;
+    uploadBtn.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            uploadBtn.click();
+        }
+    });
 });
